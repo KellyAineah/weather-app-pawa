@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Query, HTTPException
-from weather import fetch_weather
+from app.weather import fetch_weather
 import asyncio
 
 #initialize our application
