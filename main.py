@@ -9,7 +9,11 @@ app = FastAPI()
 # Enable CORS for frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Frontend URL
+    allow_origins=[
+        "http://localhost:3000",  # Local development
+        "https://weather-app-pawa-frontend-dxdn.vercel.app",  # Vercel frontend
+        
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
