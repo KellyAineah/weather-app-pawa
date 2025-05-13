@@ -22,7 +22,20 @@ app.add_middleware(
 #Root endpoint to check if the API is working
 @app.get("/")
 def read_root():
-    return {'message': 'Weather Api is working!'}
+    return {
+        "message": "Weather API is working!",
+        "test_endpoints": {
+            "current_weather": {
+                "url": "https://weather-app-pawa.onrender.com/weather?city_name=Nairobi&units=metric",
+                "instructions": "Replace 'Nairobi' with any city and optionally change units to 'imperial'"
+            },
+            "3_day_forecast": {
+                "url": "https://weather-app-pawa.onrender.com/forecast?city_name=Nairobi&units=metric",
+                "instructions": "Replace 'Nairobi' with any city and optionally change units to 'imperial'"
+            }
+        },
+        "documentation": "See GitHub README for full API specifications"
+    }
 
 # Endpoint to fetch weather data
 @app.get('/weather')
