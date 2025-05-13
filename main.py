@@ -24,13 +24,18 @@ app.add_middleware(
 def read_root():
     return {
         "message": "Weather API is working!",
+
         "test_endpoints": {
+
             "current_weather": {
                 "url": "https://weather-app-pawa.onrender.com/weather?city_name=Nairobi&units=metric",
+
                 "instructions": "Replace 'Nairobi' with any city and optionally change units to 'imperial'"
             },
             "3_day_forecast": {
+
                 "url": "https://weather-app-pawa.onrender.com/forecast?city_name=Nairobi&units=metric",
+                
                 "instructions": "Replace 'Nairobi' with any city and optionally change units to 'imperial'"
             }
         },
