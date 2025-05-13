@@ -1,9 +1,19 @@
 from fastapi import FastAPI, Query, HTTPException
 from app.weather import fetch_weather, fetch_forecast
+from fastapi.middleware.cors import CORSMiddleware
 import asyncio
 
 #initialize our application
 app = FastAPI()
+
+# Enable CORS for frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # Frontend URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 #Root endpoint to check if the API is working
 @app.get("/")
